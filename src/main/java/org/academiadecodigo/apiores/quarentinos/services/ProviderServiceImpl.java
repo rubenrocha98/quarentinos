@@ -20,28 +20,28 @@ public class ProviderServiceImpl implements ProviderService {
     }
 
 
-    @Transactional
+
     @Override
     public Provider get(Integer id) {
         return providerDao.find(id);
     }
 
 
-    @Transactional
+
     @Override
     public List<Provider> getAll() {
         return providerDao.findAll();
     }
 
 
-    @Transactional
+
     @Override
     public Provider save(Provider provider) {
         return providerDao.saveOrUpdate(provider);
     }
 
 
-    @Transactional
+
     @Override
     public void delete(Integer id) throws Exception {
 

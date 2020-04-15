@@ -25,19 +25,18 @@ public class ClientServiceImpl implements  ClientService {
         return clientDao.find(id);
     }
 
-    @Transactional
+
     @Override
     public List<Client> getAll() {
         return clientDao.findAll();
     }
 
-    @Transactional
     @Override
     public Client save(Client client) {
         return clientDao.saveOrUpdate(client);
     }
 
-    @Transactional
+
     @Override
     public void delete(Integer id) throws Exception {
 

@@ -7,21 +7,11 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.util.Date;
 
-@MappedSuperclass
+
 public abstract class AbstractModel implements Model {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
-
-    @Version
-    private Integer version;
-
-    @CreationTimestamp
-    private Date creationTime;
-
-    @UpdateTimestamp
-    private Date updateTime;
 
     private String firstName;
     private String lastName;
@@ -31,29 +21,6 @@ public abstract class AbstractModel implements Model {
     private String phone;
     private String gender;
 
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    public Date getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(Date creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 
     public String getFirstName() {
         return firstName;

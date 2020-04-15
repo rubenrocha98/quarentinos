@@ -6,17 +6,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
-@Entity
-@Table(name = "provider")
 public class Provider extends AbstractModel {
 
 
 
-    @OneToMany(
-            mappedBy = "provider",
-            cascade = {CascadeType.ALL},
-            orphanRemoval = true
-    )
+
     private List<Appointment> agenda;
 
     private RoleType roleType;

@@ -10,7 +10,7 @@ public abstract class AbstractDao<T extends Model> implements Dao<T> {
 
     protected Class<T> modelType;
 
-    @PersistenceContext
+
     private EntityManager em;
 
     public AbstractDao(Class<T> modelType){

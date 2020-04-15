@@ -4,20 +4,17 @@ package org.academiadecodigo.apiores.quarentinos.persistence.model;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "appointments")
+
 public class Appointment implements Model {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     private Integer id;
 
     private Date date;
 
-    @ManyToOne
+
     private Client client;
 
-    @ManyToOne
     private Provider provider;
 
     public Integer getId() {

@@ -5,17 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
-@Entity
-@Table(name="client")
+
 public class Client extends AbstractModel {
 
     private MaritalStatus maritalStatus;
 
-    @OneToMany(
-            mappedBy = "client",
-            cascade = {CascadeType.ALL},
-            orphanRemoval = true
-    )
     private List <Appointment> requests;
 
 
