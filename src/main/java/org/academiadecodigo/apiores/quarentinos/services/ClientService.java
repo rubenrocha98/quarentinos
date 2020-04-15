@@ -12,6 +12,8 @@ public interface ClientService {
 
     Client save(Client client);
 
+    Client update(Client client);
+
     void delete(Integer id) throws Exception;
 
 
