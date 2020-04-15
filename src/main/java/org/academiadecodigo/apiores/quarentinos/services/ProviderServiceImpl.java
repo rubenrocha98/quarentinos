@@ -19,7 +19,7 @@ public class ProviderServiceImpl implements ProviderService {
         this.providerDao = providerDao;
     }
 
-    
+
     @Transactional
     @Override
     public Provider get(Integer id) {
