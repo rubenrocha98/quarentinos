@@ -4,6 +4,7 @@ import org.academiadecodigo.apiores.quarentinos.persistence.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,8 +30,7 @@ public class ClientServiceImpl implements  ClientService {
 
     @Override
     public List<Client> getAll() {
-        return clients.values().stream()
-                .collect(Collectors.toList());
+        return new ArrayList<>(clients.values());
     }
 
     @Override

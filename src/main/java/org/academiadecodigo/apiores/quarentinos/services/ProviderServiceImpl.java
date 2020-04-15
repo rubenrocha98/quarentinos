@@ -4,6 +4,7 @@ import org.academiadecodigo.apiores.quarentinos.persistence.model.Provider;
 import org.springframework.stereotype.Service;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,8 +31,7 @@ public class ProviderServiceImpl implements ProviderService {
 
     @Override
     public List<Provider> getAll() {
-        return providerMap.values().stream()
-                .collect(Collectors.toList());
+        return new ArrayList<>(providerMap.values());
     }
 
 
