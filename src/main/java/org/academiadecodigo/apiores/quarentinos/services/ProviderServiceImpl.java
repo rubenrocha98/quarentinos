@@ -1,56 +1,53 @@
 package org.academiadecodigo.apiores.quarentinos.services;
-
-import org.academiadecodigo.apiores.quarentinos.persistence.dao.ProviderDao;
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Provider;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import org.springframework.stereotype.Service;
+
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ProviderServiceImpl implements ProviderService {
 
 
-    private ProviderDao providerDao;
+    private Integer id;
+    private Map<Integer, Provider> providerMap;
 
-    @Autowired
-    public void setProviderDao(ProviderDao providerDao) {
-        this.providerDao = providerDao;
+    public ProviderServiceImpl() {
+        id = 0;
+        this.providerMap = new HashMap<>();
     }
-
-
 
     @Override
     public Provider get(Integer id) {
-        return providerDao.find(id);
+        return providerMap.get(id);
     }
 
 
 
     @Override
     public List<Provider> getAll() {
-        return providerDao.findAll();
+        return providerMap.values().stream()
+                .collect(Collectors.toList());
     }
 
 
 
     @Override
     public Provider save(Provider provider) {
-        return providerDao.saveOrUpdate(provider);
+        id++;
+        provider.setId(id);
+        providerMap.put(id, provider);
+        return provider;
     }
 
 
 
     @Override
     public void delete(Integer id) throws Exception {
-
-        Provider provider = providerDao.find(id);
-
-        if(provider == null){
-            throw new Exception();
-        }
-
-        providerDao.delete(id);
+        providerMap.remove(id);
     }
 }

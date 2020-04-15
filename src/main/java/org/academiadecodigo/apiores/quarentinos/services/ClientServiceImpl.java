@@ -1,13 +1,9 @@
 package org.academiadecodigo.apiores.quarentinos.services;
 
-import org.academiadecodigo.apiores.quarentinos.persistence.dao.ClientDao;
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Client;
-import org.academiadecodigo.apiores.quarentinos.persistence.model.ClientFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,13 +12,13 @@ import java.util.stream.Collectors;
 @Service
 public class ClientServiceImpl implements  ClientService {
 
+    private Integer id;
     private Map<Integer, Client> clients;
-    private ClientFactory clientFactory;
 
     public ClientServiceImpl(){
         clients = new HashMap<>();
+        id = 0;
     }
-
 
 
     @Override
@@ -38,26 +34,22 @@ public class ClientServiceImpl implements  ClientService {
     }
 
     @Override
-    public Client save() {
-
+    public Client save(Client client) {
+        id++;
+        client.setId(id);
+        clients.put(id, client);
+        return client;
     }
 
     @Override
     public Client update(Client client) {
-        return null;
+        clients.replace(client.getId(),client);
+        return client;
     }
 
 
     @Override
     public void delete(Integer id) throws Exception {
-
-        Client client = clientDao.find(id);
-
-        if(client == null){
-            throw new Exception();
-        }
-
-        clientDao.delete(id);
-
+       clients.remove(id);
     }
 }
