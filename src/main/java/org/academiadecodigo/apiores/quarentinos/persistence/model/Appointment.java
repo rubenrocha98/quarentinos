@@ -1,19 +1,30 @@
 package org.academiadecodigo.apiores.quarentinos.persistence.model;
 
+
+import javax.persistence.*;
 import java.util.Date;
 
-public class Appointment extends AbstractModel {
+@Entity
+@Table(name = "appointments")
+public class Appointment implements Model {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
+
     private Date date;
+
+    @ManyToOne
     private Client client;
+
+    @ManyToOne
     private Provider provider;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

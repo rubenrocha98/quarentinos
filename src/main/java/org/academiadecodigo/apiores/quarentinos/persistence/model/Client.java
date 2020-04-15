@@ -1,6 +1,8 @@
 package org.academiadecodigo.apiores.quarentinos.persistence.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 @Entity
@@ -8,6 +10,12 @@ import java.util.List;
 public class Client extends AbstractModel {
 
     private MaritalStatus maritalStatus;
+
+    @OneToMany(
+            mappedBy = "client",
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true
+    )
     private List <Appointment> requests;
 
 

@@ -1,13 +1,28 @@
 package org.academiadecodigo.apiores.quarentinos.persistence.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
+@Entity
+@Table(name = "provider")
 public class Provider extends AbstractModel {
 
-    private RoleType roleType;
+
+
+    @OneToMany(
+            mappedBy = "provider",
+            cascade = {CascadeType.ALL},
+            orphanRemoval = true
+    )
     private List<Appointment> agenda;
-    private int priceMin;
-    private int priceMax;
+
+    private RoleType roleType;
+
+    private Integer priceMin;
+    private Integer priceMax;
 
     public RoleType getRoleType() {
         return roleType;
@@ -33,11 +48,11 @@ public class Provider extends AbstractModel {
         this.priceMin = priceMin;
     }
 
-    public int getPriceMax() {
+    public Integer getPriceMax() {
         return priceMax;
     }
 
-    public void setPriceMax(int priceMax) {
+    public void setPriceMax(Integer priceMax) {
         this.priceMax = priceMax;
     }
 }
