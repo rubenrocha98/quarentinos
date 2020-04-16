@@ -37,4 +37,12 @@ header {
     z-index: 1;
   }
 
+.h-100 {
+    /* width: 400px; */
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
   

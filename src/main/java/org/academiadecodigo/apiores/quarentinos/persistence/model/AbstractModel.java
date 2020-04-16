@@ -1,13 +1,6 @@
 package org.academiadecodigo.apiores.quarentinos.persistence.model;
 
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import javax.persistence.*;
-import java.util.Date;
-
-
 public abstract class AbstractModel implements Model {
 
 
@@ -15,7 +8,7 @@ public abstract class AbstractModel implements Model {
     private String firstName;
     private String lastName;
     private Login login;
-    private String mail;
+    private String email;
     private String phone;
     private String gender;
 
@@ -44,12 +37,12 @@ public abstract class AbstractModel implements Model {
         this.login = login;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
