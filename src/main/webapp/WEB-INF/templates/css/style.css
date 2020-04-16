@@ -1,0 +1,28 @@
+body,
+html {
+ 
+  background: rgba(0, 0, 0, 0.150) !important;
+}
+
+header {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.725);
+    height: 100px;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+     
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+
+  
