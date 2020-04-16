@@ -37,10 +37,8 @@ public class LogInController {
 
         Client client = authService.get(login.getUsername()).getClient();
 
-        if(session.isNew()){
             session.setAttribute("client",client);
-        }
 
-        return "redirect:/profile/"+client.getId();
+        return "redirect: profile/"+client.getId();
     }
 }

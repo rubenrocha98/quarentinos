@@ -3,17 +3,15 @@ package org.academiadecodigo.apiores.quarentinos.services;
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Login;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class AuthServiceImpl implements AuthService{
 
-    private Set<Login> logins;
+    private List<Login> logins;
 
     public AuthServiceImpl() {
-        logins = new HashSet<>();
+        logins = new ArrayList<>();
     }
 
     public Login addLogin(Login login){
@@ -38,10 +36,10 @@ public class AuthServiceImpl implements AuthService{
     private boolean loginAvailable(Login login){
         for (Login log : logins) {
             if(log.getUsername().equals(login.getUsername())){
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     @Override
@@ -55,7 +53,7 @@ public class AuthServiceImpl implements AuthService{
     }
 
     @Override
-    public Set<Login> getLogins() {
+    public List<Login> getLogins() {
         return logins;
     }
 }

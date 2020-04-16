@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-    AuthService authService;
-    ClientService clientService;
+    private AuthService authService;
+    private ClientService clientService;
 
     @Autowired
     public void setClientService(ClientService clientService) {
@@ -28,13 +28,13 @@ public class MainController {
     @RequestMapping("/")
     public String index(Model model){
         model.addAttribute("login",new Login());
-        model.addAttribute("logins",authService.getLogins());
+
         return "login";
     }
 
     @RequestMapping("/test")
-    public String populate(){
-        Client client = new Client();
+    public String populate(Model model){
+        /*Client client = new Client();
         Login login = new Login();
         login.setUsername("Ruben");
         login.setPassword("fonas");
@@ -43,7 +43,15 @@ public class MainController {
         login.setClient(client);
         clientService.save(client);
 
-        return "login";
+        System.out.println(client.getLogin().getUsername());
+
+        System.out.println(authService);
+        System.out.println(authService.getLogins());*/
+
+        model.addAttribute("logins",authService.getLogins());
+
+        return "index";
     }
+
 
 }

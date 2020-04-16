@@ -99,10 +99,7 @@
                     <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
                 </div>
             </div>
-            <div th:each="log : ${logins}">
-                <p th:text="${log.username}"></p>
-                <p th:text="${log.password}"></p>
-            </div>
+
             <div class="d-flex justify-content-center form_container">
                 <form th:object="${login}" th:action="@{'/login'}" method="post">
                     <div class="input-group mb-3">
@@ -124,7 +121,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mt-3 login_container">
-                        <button type="submit" class="btn login_btn">Login</button>
+                        <button type="submit" name="action" value="save" class="btn login_btn">Login</button>
                     </div>
                 </form>
             </div>

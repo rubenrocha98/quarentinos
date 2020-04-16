@@ -12,7 +12,6 @@ public abstract class AbstractModel implements Model {
 
 
     private Integer id;
-
     private String firstName;
     private String lastName;
     private Login login;
