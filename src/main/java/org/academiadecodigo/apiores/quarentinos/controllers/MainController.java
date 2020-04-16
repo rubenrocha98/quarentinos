@@ -5,9 +5,12 @@ import org.academiadecodigo.apiores.quarentinos.persistence.model.Login;
 import org.academiadecodigo.apiores.quarentinos.services.AuthService;
 import org.academiadecodigo.apiores.quarentinos.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class MainController {
@@ -26,10 +29,9 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    public String index(Model model){
-        model.addAttribute("login",new Login());
-
-        return "login";
+    public String index(HttpServletRequest httpRequest, Model model){
+        model.addAttribute("url",httpRequest.getRequestURL());
+        return "index";
     }
 
     @RequestMapping("/test")
