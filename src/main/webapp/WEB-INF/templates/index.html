@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -23,218 +23,233 @@
 
 <body>
 
-    <!--Music-->
-    <audio id="music" autoplay="true" loop="true">
-        <source src="resources/musica.mp3" type="audio/mpeg">
-    </audio>
-    <div class="d-flex justify-content-center">
-        <a href="#" class="btn btn-dark" onClick="togglePlay()" style="background-color: hotpink;">Stop singing
-            biatch!</a>
-    </div>
+<!--Music-->
+<audio id="music" autoplay="true" loop="true">
+    <source src="resources/musica.mp3" type="audio/mpeg">
+</audio>
 
-    <video autoplay muted loop id="myVideo">
-        <source src="resources/index.mp4" type="video/mp4">
-    </video>
-    <!--Nav bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
-        <a class="navbar-brand" href="#">
-            <img src="resources/logo_nav_black.png" alt="logo_nav" width="150px" height="50px">
-        </a>
-        <div class="row justify-content-right ">
+
+<video autoplay muted loop id="myVideo">
+    <source src="resources/index.mp4" type="video/mp4">
+</video>
+<!--Nav bar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+
+    <a class="navbar-brand" href="#">
+        <img src="resources/logo_nav_black.png" alt="logo_nav" width="150px" height="50px">
+    </a>
+    <div class="d-flex justify-content-left ">
+        <div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="btn btn-dark" type="submit" style="background-color: hotpink;" th:href="@{${signUpUrl}+'register'}">Sign up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-dark" type="submit" style="background-color: hotpink;" th:href="@{${url}+'login'}" >Log in</a>
+                    <a class="btn btn-dark" style="margin-left:1375px; margin-right: 10px" type="submit"
+                       th:href="@{${signUpUrl}+'register'}">Sign up</a>
                 </li>
             </ul>
         </div>
-    </nav>
-
-    <!--Head 01-->
-    <header class="py-5 bg-image-full" style="background-image: url('resources/h1bg.jpg'); background-position: 50%;">
-        <br><br>
-        <img class="img-fluid d-block mx-auto" src="resources/logo_head.png" alt="">
-    </header>
-    <section class="py-5" style="height: -500px;">
-        <div class="container">
-            <h1>About us!</h1>
-            <hr>
-            <p class="lead"> SurPex is a platform that offers extreme and unorthodox services that revolutionizes the
-                rules of the
-                game, molding them in your favor, putting into practice the maxim "the ends justify the means".
-                Thanks to SurPex customers and service providers meet, promoting ingenious, invasive and timely
-                solutions, tailored to client´s most obscure needs and interests, with ease, professionalism and all
-                secrecy that are required.
-                Whether the motivation is the appropriation of assets, the elimination or incrimination of third
-                parties, SurPex is the best alternative to the traditional and comfortable approach, having a portfolio
-                of talented professionals ready to obtain the best results.
-            </p>
+        <div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="btn btn-dark" type="submit" style="margin-right: 10px" th:href="@{${url}+'login'}">Log in</a>
+                </li>
+            </ul>
         </div>
-    </section>
-
-    <!--Head 02-->
-    <section class="py-4 bg-image-full" style="background-image: url('resources/h2bg.jpg'); background-position: 50%;">
-
-        <div style="height: 400px;"></div>
-    </section>
-    <section class="py-5" style="height: -500px;">
-        <div class="container">
-            <h1>Our purpose!</h1>
-            <hr>
-            <p class="lead">
-                When the ends justify the means, SurPex keeps distractions out of your way through a extreme,
-                unorthodox, ingenious, invasive, tailored and timely solution!
-            </p>
-            <br><br><br><br>
+        <div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="btn btn-dark" onClick="togglePlay()">Stop singing
+                        biatch!</a>
+                </li>
+            </ul>
         </div>
-    </section>
-    <section class="py-4 bg-image-full" style="background-image: url('resources/h3bg.jpg'); background-position: 50%;">
-        <div style="height: 400px;"></div>
-    </section>
 
-    <!--Services Roles-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Our Services</h2>
-    <hr>
+    </div>
+</nav>
+
+<!--Head 01-->
+<header class="py-5 bg-image-full" style="background-image: url('resources/h1bg.jpg'); background-position: 50%;">
+    <br><br>
+    <img class="img-fluid d-block mx-auto" src="resources/logo_head.png" alt="">
+</header>
+<section class="py-5" style="height: -500px;">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <img class="card-img-top" src="resources/card_hitman.webp" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Hitman</h4>
-                        <p class="card-text">Someone who gets paid to kill a specific person...</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-dark">Find Out More!</a>
-                    </div>
+        <h1>About us!</h1>
+        <hr>
+        <p class="lead"> SurPex is a platform that offers extreme and unorthodox services that revolutionizes the
+            rules of the
+            game, molding them in your favor, putting into practice the maxim "the ends justify the means".
+            Thanks to SurPex customers and service providers meet, promoting ingenious, invasive and timely
+            solutions, tailored to client´s most obscure needs and interests, with ease, professionalism and all
+            secrecy that are required.
+            Whether the motivation is the appropriation of assets, the elimination or incrimination of third
+            parties, SurPex is the best alternative to the traditional and comfortable approach, having a portfolio
+            of talented professionals ready to obtain the best results.
+        </p>
+    </div>
+</section>
+
+<!--Head 02-->
+<section class="py-4 bg-image-full" style="background-image: url('resources/h2bg.jpg'); background-position: 50%;">
+
+    <div style="height: 400px;"></div>
+</section>
+<section class="py-5" style="height: -500px;">
+    <div class="container">
+        <h1>Our purpose!</h1>
+        <hr>
+        <p class="lead">
+            When the ends justify the means, SurPex keeps distractions out of your way through a extreme,
+            unorthodox, ingenious, invasive, tailored and timely solution!
+        </p>
+        <br><br><br><br>
+    </div>
+</section>
+<section class="py-4 bg-image-full" style="background-image: url('resources/h3bg.jpg'); background-position: 50%;">
+    <div style="height: 400px;"></div>
+</section>
+
+<!--Services Roles-->
+<h2 class="h1-responsive font-weight-bold text-center my-4">Our Services</h2>
+<hr>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="resources/card_hitman.webp" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Hitman</h4>
+                    <p class="card-text">Someone who gets paid to kill a specific person...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-dark">Find Out More!</a>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <img class="card-img-top" src="resources/card_prostitue.png" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Prostitute</h4>
-                        <p class="card-text">Someone who shall engages in sexual activity for
-                            payment...</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-dark">Find Out More!</a>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="resources/card_prostitue.png" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Prostitute</h4>
+                    <p class="card-text">Someone who shall engages in sexual activity for
+                        payment...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-dark">Find Out More!</a>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <img class="card-img-top" src="resources/card_framer.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Framer</h4>
-                        <p class="card-text">Someone who shapes or creates a concept, plan, or system...</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-dark">Find Out More!</a>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="resources/card_framer.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Framer</h4>
+                    <p class="card-text">Someone who shapes or creates a concept, plan, or system...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-dark">Find Out More!</a>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <img class="card-img-top" src="resources/card_insurance.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Insurance Agent</h4>
-                        <p class="card-text">Someone who can be a very useful guide to the policies available...</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-dark">Find Out More!</a>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="resources/card_insurance.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Insurance Agent</h4>
+                    <p class="card-text">Someone who can be a very useful guide to the policies available...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-dark">Find Out More!</a>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <img class="card-img-top" src="resources/card_detective.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Detective</h4>
-                        <p class="card-text">Someone whose occupation is to investigate and solve crimes...</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-dark">Find Out More!</a>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="resources/card_detective.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Detective</h4>
+                    <p class="card-text">Someone whose occupation is to investigate and solve crimes...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-dark">Find Out More!</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!--Contact us-->
+<!--Contact us-->
+</section>
+
+<section class="py-4 bg-image-full" style="background-color: rgba(255, 255, 255, 0.550);">
+    <section class="mb-4">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+        <hr>
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
+            contact us directly. Our team will come back to you within
+            a matter of hours to help you.</p>
     </section>
 
-    <section class="py-4 bg-image-full" style="background-color: rgba(255, 255, 255, 0.550);">
-        <section class="mb-4">
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-            <hr>
-            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
-                contact us directly. Our team will come back to you within
-                a matter of hours to help you.</p>
-        </section>
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="md-form mb-0">
-                                    <label for="name" class="">Your name:</label>
-                                    <input type="text" id="name" name="name" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="md-form mb-0">
-                                    <label for="email" class="">Your email:</label>
-                                    <input type="text" id="email" name="email" class="form-control">
-                                </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="name" class="">Your name:</label>
+                                <input type="text" id="name" name="name" class="form-control">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form mb-0">
-                                    <label for="subject" class="">Subject</label>
-                                    <input type="text" id="subject" name="subject" class="form-control">
-                                </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email" class="">Your email:</label>
+                                <input type="text" id="email" name="email" class="form-control">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <label for="message">Your message:</label>
-                                    <textarea type="text" id="message" name="message" rows="2"
-                                        class="form-control md-textarea"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <br>
-                    <div class="text-center text-md-center">
-                        <a class="btn btn-dark" style="color:white;"
-                            onclick="document.getElementById('contact-form').submit();">Send</a>
                     </div>
-                    <div class="status"></div>
-                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <label for="subject" class="">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <label for="message">Your message:</label>
+                                <textarea type="text" id="message" name="message" rows="2"
+                                          class="form-control md-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <div class="text-center text-md-center">
+                    <a class="btn btn-dark" style="color:white;"
+                       onclick="document.getElementById('contact-form').submit();">Send</a>
                 </div>
+                <div class="status"></div>
+                <br>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!--Copyright footer -->
-    <footer class="py-2 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center" style="color: white;">Copyright &copy; Quarentinos 2020</p>
-        </div>
-    </footer>
+<!--Copyright footer -->
+<footer class="py-2 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center" style="color: white;">Copyright &copy; Quarentinos 2020</p>
+    </div>
+</footer>
 
-    <!--JS Scripts Dependencies-->
-    <script src="js/music_button.js"></script>
-    <script src="js/music.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="js/bg.js"></script>
+<!--JS Scripts Dependencies-->
+<script src="js/music_button.js"></script>
+<script src="js/music.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="js/bg.js"></script>
 </body>
 
 </html>
