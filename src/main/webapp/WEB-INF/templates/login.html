@@ -3,12 +3,10 @@
 
 <head>
 
-    <thymeleaf th:replace="header :: header"/>
-
     <title>SurpEx Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -21,13 +19,16 @@
     <link rel="stylesheet" type="text/css" href="css/login_style.css">
 </head>
 
-<body data-vide-bg="index">
+<body>
 
     <!--Music-->
     <audio id="music" autoplay="true" loop="true">
         <source src="resources/musica.mp3" type="audio/mpeg">
     </audio>
 
+    <video autoplay muted loop id="myVideo">
+        <source src="resources/index.mp4" type="video/mp4">
+    </video>
     <!--Login Box-->
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
