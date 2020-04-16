@@ -2,6 +2,7 @@ package org.academiadecodigo.apiores.quarentinos.controllers;
 
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Client;
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Login;
+import org.academiadecodigo.apiores.quarentinos.services.AuthService;
 import org.academiadecodigo.apiores.quarentinos.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,12 @@ import javax.servlet.http.HttpSession;
 public class LogInController {
 
     private ClientService clientService;
+    private AuthService authService;
+
+    @Autowired
+    public void setAuthService(AuthService authService) {
+        this.authService = authService;
+    }
 
     @Autowired
     public void setClientService(ClientService clientService) {
@@ -23,8 +30,17 @@ public class LogInController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/login")
     public String login(@ModelAttribute Login login, HttpSession session){
-        Client client = clientService.get(login.getClient().getId());
-        if()
 
+        if(!authService.checkLogin(login)){
+            return "redirect:/login";
+        }
+
+        Client client = authService.get(login.getUsername()).getClient();
+
+        if(session.isNew()){
+            session.setAttribute("client",client);
+        }
+
+        return "redirect:/profile/"+client.getId();
     }
 }

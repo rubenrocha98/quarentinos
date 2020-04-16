@@ -15,22 +15,22 @@ import java.util.stream.Collectors;
 public class ClientServiceImpl implements  ClientService {
 
     private Integer id;
-    private Map<String, Client> clients;
-    private Map<String, >
+    private Map<Integer, Client> clients;
+    private AuthService authService;
+
+
 
     public ClientServiceImpl(){
         clients = new HashMap<>();
         id = 0;
-        Client client = new Client();
-        Login login = new Login();
-        login.setUsername("Ruben");
-        login.setPassword("fonas");
-        client.setLogin(login);
-        client.setFirstName("Ruben");
-        login.setClient(client);
-        save(client);
+
     }
 
+    @Autowired
+    public void setAuthService(AuthService authService) {
+        this.authService = authService;
+
+    }
 
     @Override
     public Client get(Integer id) {
@@ -45,9 +45,11 @@ public class ClientServiceImpl implements  ClientService {
 
     @Override
     public Client save(Client client) {
-        if(checkUsername(client)){
+        Login login = authService.addLogin(client.getLogin());
+        if(login== null){
             return null;
         }
+
         id++;
         client.setId(id);
         clients.put(id, client);
@@ -66,12 +68,4 @@ public class ClientServiceImpl implements  ClientService {
        clients.remove(id);
     }
 
-    private boolean checkUsername(Client client){
-        for (Client c : getAll()) {
-            if(client.getLogin().getUsername().equals(c.getLogin().getUsername())){
-                return false;
-            }
-        }
-        return true;
-    }
 }
