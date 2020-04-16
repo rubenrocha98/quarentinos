@@ -31,6 +31,7 @@ public class MainController {
     @RequestMapping("/")
     public String index(HttpServletRequest httpRequest, Model model){
         model.addAttribute("url",httpRequest.getRequestURL());
+        model.addAttribute("signUpUrl", httpRequest.getRequestURL());
         return "index";
     }
 

@@ -47,4 +47,12 @@ public class LogInController {
 
         return "redirect: profile/"+client.getId();
     }
+
+    @RequestMapping("/register")
+    public String registerPage(Model model){
+        model.addAttribute("register", new Client());
+        model.addAttribute("login", new Login());
+
+        return "register";
+    }
 }
