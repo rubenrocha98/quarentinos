@@ -52,6 +52,7 @@ public class ClientServiceImpl implements  ClientService {
 
         id++;
         client.setId(id);
+        login.setClient(client);
         clients.put(id, client);
         return client;
     }
