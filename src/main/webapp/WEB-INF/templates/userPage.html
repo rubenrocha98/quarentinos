@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <thymeleaf th:replace="header :: header" />>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurpEx</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="userPage.css" />
+
+</head>
+
+<body data-vide-bg="index">
+    <video autoplay muted loop id="myVideo">
+        <source src="resources/index.mp4" type="video/mp4">
+    </video>
+
+    <div class="wrapper">
+        <!--Sidebar-->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menu</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" href="#"
+                        class="dropdown-toggle">Services</a>
+                    <ul class="collapse list-unstyled" id="servicesSubmenu">
+                        <li>
+                            <a href="#">Hitmans</a>
+                        </li>
+                        <li>
+                            <a href="#">Dirty Cop's</a>
+                        </li>
+                        <li>
+                            <a href="#">Prostitutes</a>
+                        </li>
+                        <li>
+                            <a href="#">Framing</a>
+                        </li>
+                        <li>
+                            <a href="#">Insurance Agent's</a>
+                        </li>
+                        <li>
+                            <a href="#">Detective's</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Matches</a>
+                </li>
+                <li>
+                    <a href="#">Contacts</a>
+                </li>
+                </li>
+            </ul>
+            <ul class="list-unstyled CTAs">
+                <div>
+                    <li class="profile">
+                        <button class="btn btn-dark" id="profile" type="submit">Profile</button>
+                    </li>
+                    <br><br>
+                    <li class="wallet">
+                        <button class="btn btn-dark" id="wallet" type="submit">Wallet</button>
+                    </li>
+                    <br><br>
+                    <li class="logOut">
+                        <button class="btn btn-dark" id="logOut" type="submit">Log out</button>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+        <!--Page Content-->
+        <div id="content">
+            <header>
+                <form action="#" class="navbar-form navbar-right">
+                    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="#">
+                            <img src="resources/logo_nav_black.png" alt="logo_nav" width="150px" height="50px">
+                        </a>
+                        <div class="container-fluid"></div>
+                        <div class="container-fl nav-justified-right">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                                <i class="fas fa-align-left"></i>
+                                <span>Menu</span>
+                            </button>
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
+                                data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+                </form>
+            </header>
+            <div>
+                <hr>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="resources/card_hitman.webp" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Hitman</h4>
+                                    <p class="card-text">Someone who gets paid to kill a specific person...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-dark">Find Out More!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="resources/card_prostitue.png" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Prostitute</h4>
+                                    <p class="card-text">Someone who shall engages in sexual activity for
+                                        payment...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-dark">Find Out More!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="resources/card_framer.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Framer</h4>
+                                    <p class="card-text">Someone who shapes or creates a concept, plan, or system...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-dark">Find Out More!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="resources/card_insurance.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Insurance Agent</h4>
+                                    <p class="card-text">Someone who can be a very useful guide to the policies available...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-dark">Find Out More!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="resources/card_detective.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Detective</h4>
+                                    <p class="card-text">Someone whose occupation is to investigate and solve crimes...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-dark">Find Out More!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--JS Scripts Dependencies-->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="userPage.js"></script>
+        </nav>
+    </div>
+    </div>
+
+    <!--Copyright footer -->
+    <footer class="py-2 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center" style="color: white;">Copyright &copy; Quarentinos 2020</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
