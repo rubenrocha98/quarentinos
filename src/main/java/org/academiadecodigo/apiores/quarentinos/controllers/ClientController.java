@@ -20,7 +20,7 @@ public class ClientController {
 
         model.addAttribute("client",session.getAttribute("client"));
 
-        return "shit";
+        return "userPage";
     }
 
 
