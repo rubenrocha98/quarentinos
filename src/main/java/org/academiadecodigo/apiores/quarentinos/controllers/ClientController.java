@@ -14,6 +14,10 @@ public class ClientController {
     @RequestMapping(method = RequestMethod.GET, value = "/profile/{id}")
     public String showProfile(Model model, HttpSession session, @PathVariable Integer id){
 
+        if(session.getAttribute("client")==null){
+            return "redirect:/";
+        }
+
         model.addAttribute("client",session.getAttribute("client"));
 
         return "shit";

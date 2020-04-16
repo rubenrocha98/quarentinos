@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class MainController {
@@ -29,7 +30,11 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    public String index(HttpServletRequest httpRequest, Model model){
+    public String index(HttpServletRequest httpRequest, Model model, HttpSession session){
+        Client client = (Client) session.getAttribute("client");
+        if(client!=null){
+            return "redirect: profile/"+client.getId();
+        }
         model.addAttribute("url",httpRequest.getRequestURL());
         model.addAttribute("signUpUrl", httpRequest.getRequestURL());
         return "index";

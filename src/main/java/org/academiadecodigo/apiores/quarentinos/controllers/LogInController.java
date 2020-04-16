@@ -66,14 +66,17 @@ public class LogInController {
         if(clientSaved == null){
             return "redirect:/register";
         }
-        System.out.println(client.getLogin().getUsername());
-        System.out.println(client.getLogin().getPassword());
-        System.out.println(clientSaved.getFirstName());
-        System.out.println(clientSaved.getLogin().getUsername());
+
 
         session.setAttribute("client", clientSaved);
-
+        session.setMaxInactiveInterval(600);
         return "redirect: profile/"+clientSaved.getId();
 
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 }
