@@ -44,15 +44,36 @@ public class LogInController {
         Client client = authService.get(login.getUsername()).getClient();
 
             session.setAttribute("client",client);
+        System.out.println(client);
 
-        return "redirect: profile/"+client.getId();
+        return "redirect: profile/" + client.getId();
     }
 
     @RequestMapping("/register")
     public String registerPage(Model model){
-        model.addAttribute("register", new Client());
-        model.addAttribute("login", new Login());
+        Client client = new Client();
+        client.setLogin(new Login());
+        model.addAttribute("register", client);
+
 
         return "register";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/register")
+    public String register (@ModelAttribute Client client, HttpSession session){
+        Client clientSaved = clientService.save(client);
+
+        if(clientSaved == null){
+            return "redirect:/register";
+        }
+        System.out.println(client.getLogin().getUsername());
+        System.out.println(client.getLogin().getPassword());
+        System.out.println(clientSaved.getFirstName());
+        System.out.println(clientSaved.getLogin().getUsername());
+
+        session.setAttribute("client", clientSaved);
+
+        return "redirect: profile/"+clientSaved.getId();
+
     }
 }

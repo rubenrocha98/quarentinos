@@ -3,111 +3,158 @@
 
 <head>
 
-    <title>SurpEx Login</title>
+    <title>SurpEx</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/login_style.css">
 </head>
 
 <body>
 
-    <!--Music-->
-    <audio id="music" autoplay="true" loop="true">
-        <source src="resources/musica.mp3" type="audio/mpeg">
-    </audio>
+<!--Music-->
+<audio id="music" autoplay="true" loop="true">
+    <source src="resources/musica.mp3" type="audio/mpeg">
+</audio>
+<div class="d-flex justify-content-center">
+    <a href="#" class="btn btn-dark" onClick="togglePlay()" style="background-color: hotpink;">Stop singing
+        biatch!</a>
+</div>
 
-    <video autoplay muted loop id="myVideo">
-        <source src="resources/index.mp4" type="video/mp4">
-    </video>
-    <!--Login Box-->
-    <div class="container h-100">
-        <div class="d-flex justify-content-center h-100">
-            <div class="user_card">
-                <div class="d-flex justify-content-center">
-                    <div class="brand_logo_container">
-                        <img src="resources/logo_nav.png" class="brand_logo" alt="Logo">
-                    </div>
+<video autoplay muted loop id="myVideo">
+    <source src="resources/index.mp4" type="video/mp4">
+</video>
+<!--Login Box-->
+<div class="container h-100" style="height: 350px">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <img src="resources/logo_nav.png" class="brand_logo" alt="Logo">
                 </div>
-                <div class="d-flex justify-content-center form_container">
-                    <form method="post" th:object="${register}" th:action="@{'/register'}">
-                        <div class="input-group mb-3">
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form method="post" th:object="${register}" th:action="@{'/register'}">
+                    <div class="form-row">
+                        <div class="input-group mb-3 form-group col-md-6">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="" class="form-control snput_user" value="" placeholder="First Name" th:field="*{firstName}">
+                            <input type="text" name="" class="form-control input_user" value="" placeholder="First Name"
+                                   th:field="*{firstName}">
                         </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="text" name="" class="form-control input_pass" value=""
-                                placeholder="Last Name" th:field="*{lastName}">
-                        </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="text" name="" class="form-control input_pass" value=""
-                                   placeholder="" th:field="*{lastName}">
-                        </div>
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-3 form-group col-md-6">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <input type="text" name="" class="form-control input_pass" value=""
                                    placeholder="Last Name" th:field="*{lastName}">
                         </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="text" name="" class="form-control input_pass" value=""
-                                   placeholder="Last Name" th:field="*{lastName}">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                <label class="custom-control-label" for="customControlInline">Remember
-                                    me</label>
-                            </div>
+                        <input type="text" name="" class="form-control input_pass" value=""
+                               placeholder="Username" th:field="*{login.username}">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="button" name="button" class="btn login_btn"><a href="index.html"
-                                    style="color: white; text-decoration: none;">Login</a></button>
+                        <input type="text" name="" class="form-control input_pass" value=""
+                               placeholder="Password" th:field="*{login.password}">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                    </form>
-                </div>
+                        <input type="number" name="" class="form-control input_pass" value=""
+                               placeholder="Phone" th:field="*{phone}">
+                    </div>
 
-                <div class="mt-4">
-                    <div class="d-flex justify-content-center links">
-                        Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="number" name="" class="form-control input_pass" value=""
+                               placeholder="Phone" th:field="*{phone}">
                     </div>
-                    <div class="d-flex justify-content-center links">
-                        <a href="#">Forgot your password?</a>
+                    <div class="form-row">
+                        <div class="field form-group col-md-6">
+                            <label id="contactpackage" class="label">Gender</label>
+                            <p class="control has-icons-left">
+          <span class="select">
+            <select th:field="*{gender}">
+              <option th:value="'Developer'" selected>Developer</option>
+              <option th:value="'Male'">Male</option>
+              <option th:value="'Female'">Female</option>
+
+            </select>
+          </span>
+                            </p>
+                        </div>
+                        <div class="field form-group col-md-6">
+                            <label id="contactpackage2" class="label">Marital Status</label>
+                            <p class="control has-icons-left">
+          <span class="select">
+            <select th:field="*{gender}">
+              <option th:value="''" selected>Developer</option>
+              <option th:value="'Male'">Male</option>
+              <option th:value="'Female'">Female</option>
+
+            </select>
+          </span>
+                            </p>
+                        </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customControlInline">
+                            <label class="custom-control-label" for="customControlInline">Remember
+                                me</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <button type="submit" name="button" class="btn login_btn"><a
+                                                                                     style="color: white; text-decoration: none;">Register</a>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="mt-4">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+                </div>
+                <div class="d-flex justify-content-center links">
+                    <a href="#">Forgot your password?</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!--<div>
-        <img src="resources/chains.png" class="fix" />
-    </div>-->
+<!--<div>
+    <img src="resources/chains.png" class="fix" />
+</div>-->
 
-    <!--JS Scripts-->
-    <script src="js/music.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="js/bg.js"></script>
+<!--JS Scripts-->
+<script src="js/music_button.js"></script>
+<script src="js/music.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="js/bg.js"></script>
 </body>
 
 </html>
