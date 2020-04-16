@@ -15,8 +15,7 @@ public abstract class AbstractModel implements Model {
 
     private String firstName;
     private String lastName;
-    private String username;
-    private String password;
+    private Login login;
     private String mail;
     private String phone;
     private String gender;
@@ -38,20 +37,12 @@ public abstract class AbstractModel implements Model {
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public Login getLogin() {
+        return login;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLogin(Login login) {
+        this.login = login;
     }
 
     public String getMail() {
