@@ -1,15 +1,33 @@
 package org.academiadecodigo.apiores.quarentinos.persistence.model;
 
 
+import javax.validation.constraints.*;
+
 public abstract class AbstractModel implements Model {
 
-
     private Integer id;
+
+    @NotNull(message = "First name is mandatory")
+    @NotBlank(message = "First name is mandatory")
+    @Size(min = 3, max = 64)
     private String firstName;
+
+    @NotNull(message = "First name is mandatory")
+    @NotBlank(message = "First name is mandatory")
+    @Size(min = 3, max = 64)
     private String lastName;
+
+
     private Login login;
+
+    @Email
+    @NotBlank(message = "Email is mandatory")
     private String email;
+
+    @Pattern(regexp = "^\\+?[0-9]*$", message = "Phone number contains invalid characters")
+    @Size(min = 9, max = 16)
     private String phone;
+
     private String gender;
 
 
