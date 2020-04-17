@@ -66,16 +66,33 @@
         </ul>
     </nav>
     <!--Page Content-->
+
+
     <div id="content">
+        <div class="card-container" style="text-align: center" >
+            <div class="card" style="width: 32rem; display: inline-block;">
+                <img class="card-img-top" src="resources/logo_nav_black.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Client Profile</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Name</b></li>
+                    <li class="list-group-item" th:text="${client.firstName} + ' ' + ${client.lastName}"></li>
+                    <li class="list-group-item"><b>Username</b></li>
+                    <li class="list-group-item" th:text="${client.login.username}"></li>
+                    <li class="list-group-item"><b>Email</b></li>
+                    <li class="list-group-item" th:text="${client.email}"></li>
+                    <li class="list-group-item"><b>Phone</b></li>
+                    <li class="list-group-item" th:text="${client.phone}"></li>
+                </ul>
+                <div class="card-body">
 
-        <div >
-            <p th:text="${client.firstName}"> </p> <span th:text="${client.lastName}"></span>
-            <p th:text="${client.login.username}"></p>
-            <p th:text="${client.email}"></p>
-            <p th:text="${client.phone}"></p>
-            <p th:text="${client.gender}"></p>
+                </div>
+            </div>
         </div>
-
+        <br><br>   <br><br>
         <div th:if="${not #lists.isEmpty(providers)}">
             <table class="table table-striped table-dark table-hover">
                 <tr>
@@ -99,7 +116,7 @@
                     <td th:text="${provider.gender}"></td>
                     <td th:text="${provider.priceMin}"></td>
                     <td th:text="${provider.priceMax}"></td>
-                    <td><a href="buy" class="btn btn-info">Buy</a></td>
+                    <td><a href="buy" class="btn btn-dark" style="background-color: hotpink">Buy</a></td>
 
                 </tr>
             </table>

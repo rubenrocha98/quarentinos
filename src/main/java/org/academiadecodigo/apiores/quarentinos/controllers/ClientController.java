@@ -103,7 +103,7 @@ public class ClientController {
     @RequestMapping(method = RequestMethod.GET, value = "/buy")
     public String askForCreditCardInfo(){
 
-        return "";
+        return "creditCard";
     }
 
 
