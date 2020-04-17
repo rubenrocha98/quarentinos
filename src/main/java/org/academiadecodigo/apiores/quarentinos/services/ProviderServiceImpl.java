@@ -1,6 +1,7 @@
 package org.academiadecodigo.apiores.quarentinos.services;
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Provider;
 
+import org.academiadecodigo.apiores.quarentinos.persistence.model.RoleType;
 import org.springframework.stereotype.Service;
 
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -45,6 +47,10 @@ public class ProviderServiceImpl implements ProviderService {
     }
 
 
+    @Override
+    public List<Provider> getByRole(RoleType roleType) {
+        return providerMap.values().stream().filter(a->(roleType==a.getRoleType())).collect(Collectors.toList());
+    }
 
     @Override
     public void delete(Integer id) throws Exception {

@@ -121,7 +121,7 @@ public class ClientServiceImpl implements  ClientService {
         Provider insuranceAgent = new Provider();
         insuranceAgent.setPriceMax(4000);
         insuranceAgent.setPriceMin(1500);
-        insuranceAgent.setRoleType(RoleType.FRAMER);
+        insuranceAgent.setRoleType(RoleType.INSURANCE_AGENT);
         insuranceAgent.setFirstName("Evandro");
         insuranceAgent.setLastName("Mendes");
         insuranceAgent.setPhone("934582981");

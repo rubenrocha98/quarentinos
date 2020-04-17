@@ -63,10 +63,12 @@ public class LogInController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/register")
     public String register (@Valid @ModelAttribute Client client, BindingResult bindingResult, HttpSession session, Model model){
+
         if (bindingResult.hasErrors()){
             model.addAttribute("register",client);
             return "register";
         }
+
 
         Client clientSaved = clientService.save(client);
         if(clientSaved == null){

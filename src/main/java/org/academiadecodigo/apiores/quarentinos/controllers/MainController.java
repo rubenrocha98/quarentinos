@@ -33,7 +33,7 @@ public class MainController {
     public String index(HttpServletRequest httpRequest, Model model, HttpSession session){
         Client client = (Client) session.getAttribute("client");
         if(client!=null){
-            return "redirect: profile/"+client.getId();
+            return "redirect:/profile";
         }
         model.addAttribute("url",httpRequest.getRequestURL());
         model.addAttribute("signUpUrl", httpRequest.getRequestURL());

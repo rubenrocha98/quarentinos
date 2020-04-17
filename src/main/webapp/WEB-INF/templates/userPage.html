@@ -1,203 +1,123 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <thymeleaf th:replace="header :: header" />
+    <thymeleaf th:replace="header :: header"/>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurpEx</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/userPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/userPage.css"/>
 
 </head>
 
 <body data-vide-bg="index">
-    <video autoplay muted loop id="myVideo">
-        <source src="resources/index.mp4" type="video/mp4">
-    </video>
+<video autoplay muted loop id="myVideo">
+    <source src="resources/index.mp4" type="video/mp4">
+</video>
 
-    <div class="wrapper">
-        <!--Sidebar-->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Menu</h3>
-            </div>
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" href="#"
-                        class="dropdown-toggle">Services</a>
-                    <ul class="collapse list-unstyled" id="servicesSubmenu">
-                        <li>
-                            <a href="#">Hitmans</a>
-                        </li>
-                        <li>
-                            <a href="#">Dirty Cop's</a>
-                        </li>
-                        <li>
-                            <a href="#">Prostitutes</a>
-                        </li>
-                        <li>
-                            <a href="#">Framing</a>
-                        </li>
-                        <li>
-                            <a href="#">Insurance Agent's</a>
-                        </li>
-                        <li>
-                            <a href="#">Detective's</a>
-                        </li>
-                    </ul>
+<div class="wrapper">
+    <!--Sidebar-->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Services</h3>
+        </div>
+        <ul class="list-unstyled components">
 
-                </li>
-                <li>
-                    <a href="#">Packages                     </a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Matches</a>
-                </li>
-                <li>
-                    <a href="#">Contacts</a>
-                </li>
-                </li>
-            </ul>
-            <ul class="list-unstyled CTAs">
-                <div>
-                    <li class="profile">
-                        <button class="btn btn-dark" id="profile" type="submit">Profile</button>
-                    </li>
-                    <br><br>
-                    <li class="wallet">
-                        <button class="btn btn-dark" id="wallet" type="submit">Wallet</button>
-                    </li>
-                    <br><br>
-                    <li class="logOut">
-                        <button class="btn btn-dark" id="logOut" type="submit">Log out</button>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-        <!--Page Content-->
-        <div id="content">
-            <header>
-                <form action="#" class="navbar-form navbar-right">
-                    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">
-                            <img src="resources/logo_nav_black.png" alt="logo_nav" width="150px" height="50px">
-                        </a>
-                        <div class="container-fluid"></div>
-                        <div class="container-fl nav-justified-right">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                <i class="fas fa-align-left"></i>
-                                <span>Menu</span>
-                            </button>
-                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
-                                data-toggle="collapse" data-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <i class="fas fa-align-justify"></i>
-                            </button>
-                        </div>
-                </form>
-            </header>
+            <li>
+                <a href="hitmans">Hitmans</a>
+            </li>
+            <li>
+                <a href="escorts">Escorts</a>
+            </li>
+            <li>
+                <a href="framer">Framing</a>
+            </li>
+            <li>
+                <a href="insurance">Insurance Agents</a>
+            </li>
+            <li>
+                <a href="detectives">Detectives</a>
+            </li>
+        </ul>
+        <ul class="list-unstyled CTAs">
             <div>
-                <hr>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 mb-5">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title">Hitman</h4>
-                                    <p class="card-text">Someone who gets paid to kill a specific person...</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title">Prostitute</h4>
-                                    <p class="card-text">Someone who shall engages in sexual activity for
-                                        payment...</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title">Framer</h4>
-                                    <p class="card-text">Someone who shapes or creates a concept, plan, or system...</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title">Insurance Agent</h4>
-                                    <p class="card-text">Someone who can be a very useful guide to the policies
-                                        available...</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title">Detective</h4>
-                                    <p class="card-text">Someone whose occupation is to investigate and solve crimes...
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <li class="profile">
+                    <a th:href="@{'/profile'}" class="btn btn-dark" id="profile" type="submit">Profile</a>
+                </li>
+                <br><br>
+                <li class="logOut">
+                    <a th:href="@{'/logout'}" class="btn btn-dark" id="logOut" type="submit">Log out</a>
+                </li>
             </div>
-        </div>
-        <!--JS Scripts Dependencies-->
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="js/userPage.js"></script>
-        </nav>
-    </div>
-    </div>
+        </ul>
+    </nav>
+    <!--Page Content-->
+    <div id="content">
 
-    <!--Copyright footer -->
-    <footer class="py-2 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center" style="color: white;">Copyright &copy; Quarentinos 2020</p>
+        <div >
+            <p th:text="${client.firstName}"> </p> <span th:text="${client.lastName}"></span>
+            <p th:text="${client.login.username}"></p>
+            <p th:text="${client.email}"></p>
+            <p th:text="${client.phone}"></p>
+            <p th:text="${client.gender}"></p>
         </div>
-    </footer>
+
+        <div th:if="${not #lists.isEmpty(providers)}">
+            <table class="table table-striped table-dark table-hover">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Mail</th>
+                    <th>Service</th>
+                    <th>Gender</th>
+                    <th>Minimun Price</th>
+                    <th>Maximum Price</th>
+                    <th>Buy Service</th>
+
+                </tr>
+                <tr th:each="provider : ${providers}">
+                    <td th:text="${provider.firstName}"></td>
+                    <td th:text="${provider.lastName}"></td>
+                    <td th:text="${provider.phone}"></td>
+                    <td th:text="${provider.email}"></td>
+                    <td th:text="${provider.roleType.desc}"></td>
+                    <td th:text="${provider.gender}"></td>
+                    <td th:text="${provider.priceMin}"></td>
+                    <td th:text="${provider.priceMax}"></td>
+                    <td><a href="buy" class="btn btn-info">Buy</a></td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--JS Scripts Dependencies-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="js/userPage.js"></script>
+    </nav>
+</div>
+</div>
+
+<!--Copyright footer -->
+<footer class="py-2 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center" style="color: white;">Copyright &copy; Quarentinos 2020</p>
+    </div>
+</footer>
 
 </body>
 
