@@ -6,7 +6,7 @@
 
 
     <title>SurpEx</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -27,7 +27,6 @@
 <audio id="music" autoplay="true" loop="true">
     <source src="resources/musica.mp3" type="audio/mpeg">
 </audio>
-
 
 <video autoplay muted loop id="myVideo">
     <source src="resources/index.mp4" type="video/mp4">
@@ -51,15 +50,14 @@
         <div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="btn btn-dark" type="submit" style="margin-right: 10px" th:href="@{${url}+'login'}">Log in</a>
+                    <a class="btn btn-dark" type="submit" style="margin-right: 10px; color: " th:href="@{${url}+'login'}">Log in</a>
                 </li>
             </ul>
         </div>
         <div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#" class="btn btn-dark" onClick="togglePlay()">Stop singing
-                        biatch!</a>
+                    <a href="#" class="btn btn-dark" onClick="togglePlay()">Stop Music</a>
                 </li>
             </ul>
         </div>
@@ -74,18 +72,9 @@
 </header>
 <section class="py-5" style="height: -500px;">
     <div class="container">
-        <h1>About us!</h1>
-        <hr>
-        <p class="lead"> SurPex is a platform that offers extreme and unorthodox services that revolutionizes the
-            rules of the
-            game, molding them in your favor, putting into practice the maxim "the ends justify the means".
-            Thanks to SurPex customers and service providers meet, promoting ingenious, invasive and timely
-            solutions, tailored to client´s most obscure needs and interests, with ease, professionalism and all
-            secrecy that are required.
-            Whether the motivation is the appropriation of assets, the elimination or incrimination of third
-            parties, SurPex is the best alternative to the traditional and comfortable approach, having a portfolio
-            of talented professionals ready to obtain the best results.
-        </p>
+        <br><br><br>
+            <h1 style="color: ghostwhite">"Untangle your life by finding who can help you...SurPex!"</h1>
+        <br><br><br><br><br>
     </div>
 </section>
 
@@ -96,13 +85,32 @@
 </section>
 <section class="py-5" style="height: -500px;">
     <div class="container">
-        <h1>Our purpose!</h1>
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Client Testimonials</h2>
         <hr>
-        <p class="lead">
-            When the ends justify the means, SurPex keeps distractions out of your way through a extreme,
-            unorthodox, ingenious, invasive, tailored and timely solution!
-        </p>
-        <br><br><br><br>
+        <div class="container">
+            <div class="row justify-content-center" >
+                <div class="col-md-4 mb-5" >
+                    <div class="card h-100 justify-content-center" style="background-color: #1d2124">
+                        <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                            <source src="resources/Muslim.mp4" type="video/mp4">
+                            <source src="mov_bbb.ogg" type="video/ogg">
+                        </video>
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: ghostwhite">Lubna</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5" >
+                    <div class="card h-100 justify-content-center" style="background-color: #1d2124">
+                        <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                            <source src="resources/Evandro_Final.mp4" type="video/mp4">
+                            <source src="mov_bbb.ogg" type="video/ogg">
+                        </video>
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: ghostwhite">Kathleen</h4>
+                        </div>
+                    </div>
+                </div>
     </div>
 </section>
 <section class="py-4 bg-image-full" style="background-image: url('resources/h3bg.jpg'); background-position: 50%;">
@@ -110,68 +118,62 @@
 </section>
 
 <!--Services Roles-->
-<h2 class="h1-responsive font-weight-bold text-center my-4">Our Services</h2>
+<h2 class="h1-responsive font-weight-bold text-center my-4">External Agents Testimonials</h2>
 <hr>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <img class="card-img-top" src="resources/card_hitman.webp" alt="">
+    <div class="row justify-content-center" >
+        <div class="col-md-4 mb-5" >
+            <div class="card h-100 justify-content-center" style="background-color: #1d2124">
+                <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                    <source src="resources/Hitman.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                </video>
                 <div class="card-body">
-                    <h4 class="card-title">Hitman</h4>
-                    <p class="card-text">Someone who gets paid to kill a specific person...</p>
+                    <h4 class="card-title" style="color: ghostwhite">Hitman</h4>
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-dark">Find Out More!</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5" >
+            <div class="card h-100 justify-content-center" style="background-color: #1d2124">
+                <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                    <source src="resources/Andreia.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                </video>
+                <div class="card-body">
+                    <h4 class="card-title" style="color: ghostwhite">Escort</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5" >
+            <div class="card h-100 justify-content-center" style="background-color: #1d2124">
+                <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                    <source src="resources/jaimão.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                </video>
+                <div class="card-body">
+                    <h4 class="card-title" style="color: ghostwhite">Framer</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5" >
+            <div class="card h-100 justify-content-center" style="background-color: #1d2124">
+                <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                    <source src="resources/Slav_Final.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                </video>
+                <div class="card-body">
+                    <h4 class="card-title" style="color: ghostwhite">Insurance Agent</h4>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <img class="card-img-top" src="resources/card_prostitue.png" alt="">
+            <div class="card h-100" style="background-color: #1d2124">
+                <video style="margin-left: 30px" width="289.98" height = "384.98" controls >
+                    <source src="resources/peaky.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                </video>
                 <div class="card-body">
-                    <h4 class="card-title">Prostitute</h4>
-                    <p class="card-text">Someone who shall engages in sexual activity for
-                        payment...</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <img class="card-img-top" src="resources/card_framer.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Framer</h4>
-                    <p class="card-text">Someone who shapes or creates a concept, plan, or system...</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <img class="card-img-top" src="resources/card_insurance.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Insurance Agent</h4>
-                    <p class="card-text">Someone who can be a very useful guide to the policies available...</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-dark">Find Out More!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <img class="card-img-top" src="resources/card_detective.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">Detective</h4>
-                    <p class="card-text">Someone whose occupation is to investigate and solve crimes...</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-dark">Find Out More!</a>
+                    <h4 class="card-title" style="color: ghostwhite">Detective</h4>
                 </div>
             </div>
         </div>
@@ -228,8 +230,7 @@
                 </form>
                 <br>
                 <div class="text-center text-md-center">
-                    <a class="btn btn-dark" style="color:white;"
-                       onclick="document.getElementById('contact-form').submit();">Send</a>
+                    <a class="btn btn-dark" style="color:white;">Send</a>
                 </div>
                 <div class="status"></div>
                 <br>

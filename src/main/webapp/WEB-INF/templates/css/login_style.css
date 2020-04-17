@@ -68,11 +68,4 @@ html {
   background-color: #ff69b4 !important;
 }
 
-.fix {
-  position: absolute;
-  vertical-align: middle;
-  width: 60%;
-  bottom: 0px;
-  left: 375px;
-}
 

@@ -1,5 +1,4 @@
 
-
 #myVideo {
     position: fixed;
     right: 0;
@@ -10,11 +9,11 @@
 }
 
 
-
 body,
 html {
- 
-  background: rgba(0, 0, 0, 0.150) !important;
+
+    font-family: Futura,Monospaced;
+    background: rgba(0, 0, 0, 0.150) !important;
 }
 
 header {
@@ -24,18 +23,20 @@ header {
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
-  }
-     
-  header .overlay {
+}
+
+header .overlay {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.5;
+    opacity: 1.0;
     z-index: 1;
-  }
+}
+
+
 
 
 
