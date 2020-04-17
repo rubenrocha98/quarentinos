@@ -17,13 +17,18 @@ public class ClientServiceImpl implements  ClientService {
     private Integer id;
     private Map<Integer, Client> clients;
     private AuthService authService;
-
+    private ProviderService providerService;
 
 
     public ClientServiceImpl(){
         clients = new HashMap<>();
         id = 0;
 
+    }
+
+    @Autowired
+    public void setProviderService(ProviderService providerService) {
+        this.providerService = providerService;
     }
 
     @Autowired
@@ -67,6 +72,11 @@ public class ClientServiceImpl implements  ClientService {
     @Override
     public void delete(Integer id) throws Exception {
        clients.remove(id);
+    }
+
+    private void populateProvider(){
+
+
     }
 
 }
