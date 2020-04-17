@@ -20,7 +20,7 @@ public class ClientController {
         this.providerService = providerService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/profile/{")
+    @RequestMapping(method = RequestMethod.GET, value = "/profile")
     public String showProfile(Model model, HttpSession session){
 
         if(session.getAttribute("client")==null){
@@ -28,9 +28,7 @@ public class ClientController {
         }
 
         model.addAttribute("client",session.getAttribute("client"));
-        for (Provider provider : providerService.getAll()) {
-            System.out.println(provider.getFirstName());
-        }
+        model.addAttribute("providers", providerService.getAll());
 
         return "userPage";
     }

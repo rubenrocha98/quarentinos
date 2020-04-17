@@ -99,14 +99,14 @@ public class ClientServiceImpl implements  ClientService {
         hooker.setGender("Shemale");
 
         Provider hooker2 = new Provider();
-        hooker.setPriceMax(1000);
-        hooker.setPriceMin(200);
-        hooker.setRoleType(RoleType.PROSTITUTION);
-        hooker.setFirstName("Kobe");
-        hooker.setLastName("Bryant");
-        hooker.setPhone("295029789");
-        hooker.setEmail("negao@gmail.com");
-        hooker.setGender("Male");
+        hooker2.setPriceMax(1000);
+        hooker2.setPriceMin(200);
+        hooker2.setRoleType(RoleType.PROSTITUTION);
+        hooker2.setFirstName("Kobe");
+        hooker2.setLastName("Bryant");
+        hooker2.setPhone("295029789");
+        hooker2.setEmail("negao@gmail.com");
+        hooker2.setGender("Male");
 
         Provider badCop = new Provider();
         badCop.setPriceMax(5000);
