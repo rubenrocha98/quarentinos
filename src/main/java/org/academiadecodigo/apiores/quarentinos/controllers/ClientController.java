@@ -1,5 +1,8 @@
 package org.academiadecodigo.apiores.quarentinos.controllers;
 
+import org.academiadecodigo.apiores.quarentinos.persistence.model.Provider;
+import org.academiadecodigo.apiores.quarentinos.services.ProviderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,18 +13,26 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class ClientController {
+    private ProviderService providerService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/profile/{id}")
-    public String showProfile(Model model, HttpSession session, @PathVariable Integer id){
+    @Autowired
+    public void setProviderService(ProviderService providerService) {
+        this.providerService = providerService;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/profile/{")
+    public String showProfile(Model model, HttpSession session){
 
         if(session.getAttribute("client")==null){
             return "redirect:/";
         }
 
         model.addAttribute("client",session.getAttribute("client"));
+        for (Provider provider : providerService.getAll()) {
+            System.out.println(provider.getFirstName());
+        }
 
         return "userPage";
     }
-
 
 }

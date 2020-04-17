@@ -2,6 +2,8 @@ package org.academiadecodigo.apiores.quarentinos.services;
 
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Client;
 import org.academiadecodigo.apiores.quarentinos.persistence.model.Login;
+import org.academiadecodigo.apiores.quarentinos.persistence.model.Provider;
+import org.academiadecodigo.apiores.quarentinos.persistence.model.RoleType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 public class ClientServiceImpl implements  ClientService {
@@ -29,6 +30,7 @@ public class ClientServiceImpl implements  ClientService {
     @Autowired
     public void setProviderService(ProviderService providerService) {
         this.providerService = providerService;
+        populateProvider();
     }
 
     @Autowired
@@ -76,7 +78,72 @@ public class ClientServiceImpl implements  ClientService {
 
     private void populateProvider(){
 
+        Provider providerHitman = new Provider();
+        providerHitman.setPriceMax(200000);
+        providerHitman.setPriceMin(15000);
+        providerHitman.setRoleType(RoleType.HITMAN);
+        providerHitman.setFirstName("Ruben");
+        providerHitman.setLastName("Rocha");
+        providerHitman.setPhone("963616102");
+        providerHitman.setEmail("rubenrocha@gmail.com");
+        providerHitman.setGender("Reptilian");
 
+        Provider hooker = new Provider();
+        hooker.setPriceMax(1000);
+        hooker.setPriceMin(200);
+        hooker.setRoleType(RoleType.PROSTITUTION);
+        hooker.setFirstName("Andreya");
+        hooker.setLastName("Brancqa");
+        hooker.setPhone("965049918");
+        hooker.setEmail("branquinha@gmail.com");
+        hooker.setGender("Shemale");
+
+        Provider hooker2 = new Provider();
+        hooker.setPriceMax(1000);
+        hooker.setPriceMin(200);
+        hooker.setRoleType(RoleType.PROSTITUTION);
+        hooker.setFirstName("Kobe");
+        hooker.setLastName("Bryant");
+        hooker.setPhone("295029789");
+        hooker.setEmail("negao@gmail.com");
+        hooker.setGender("Male");
+
+        Provider badCop = new Provider();
+        badCop.setPriceMax(5000);
+        badCop.setPriceMin(2000);
+        badCop.setRoleType(RoleType.FRAMER);
+        badCop.setFirstName("Mauricio");
+        badCop.setLastName("Jeremias");
+        badCop.setPhone("934582981");
+        badCop.setEmail("conspiration_master@gmail.com");
+        badCop.setGender("Male");
+
+        Provider insuranceAgent = new Provider();
+        insuranceAgent.setPriceMax(4000);
+        insuranceAgent.setPriceMin(1500);
+        insuranceAgent.setRoleType(RoleType.FRAMER);
+        insuranceAgent.setFirstName("Evandro");
+        insuranceAgent.setLastName("Mendes");
+        insuranceAgent.setPhone("934582981");
+        insuranceAgent.setEmail("evandro_mendes_zurich@gmail.com");
+        insuranceAgent.setGender("Male");
+
+        Provider detective = new Provider();
+        detective.setPriceMax(5000);
+        detective.setPriceMin(1500);
+        detective.setRoleType(RoleType.DETECTIVE);
+        detective.setFirstName("Chico");
+        detective.setLastName("Carreiro");
+        detective.setPhone("924129477");
+        detective.setEmail("psycho_detetive@gmail.com");
+        detective.setGender("Reptilian");
+
+        providerService.save(providerHitman);
+        providerService.save(hooker);
+        providerService.save(hooker2);
+        providerService.save(detective);
+        providerService.save(insuranceAgent);
+        providerService.save(badCop);
     }
 
 }

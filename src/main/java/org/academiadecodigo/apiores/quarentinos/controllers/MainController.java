@@ -42,19 +42,6 @@ public class MainController {
 
     @RequestMapping("/test")
     public String populate(Model model){
-        /*Client client = new Client();
-        Login login = new Login();
-        login.setUsername("Ruben");
-        login.setPassword("fonas");
-        client.setLogin(login);
-        client.setFirstName("Ruben");
-        login.setClient(client);
-        clientService.save(client);
-
-        System.out.println(client.getLogin().getUsername());
-
-        System.out.println(authService);
-        System.out.println(authService.getLogins());*/
 
         model.addAttribute("logins",authService.getLogins());
 

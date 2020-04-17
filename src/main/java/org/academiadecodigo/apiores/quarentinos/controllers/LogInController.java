@@ -46,7 +46,7 @@ public class LogInController {
             session.setAttribute("client",client);
         System.out.println(client);
 
-        return "redirect: profile/" + client.getId();
+        return "redirect: profile/";
     }
 
     @RequestMapping("/register")
@@ -70,7 +70,7 @@ public class LogInController {
 
         session.setAttribute("client", clientSaved);
         session.setMaxInactiveInterval(600);
-        return "redirect: profile/"+clientSaved.getId();
+        return "redirect: profile/";
 
     }
 
